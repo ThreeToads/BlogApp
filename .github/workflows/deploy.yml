@@ -3,7 +3,7 @@ name: Deploy to Railway
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
@@ -19,4 +19,4 @@ jobs:
       - name: Deploy app
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-        run: railway up --service app
+        run: railway up --service BlogApp
