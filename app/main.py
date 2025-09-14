@@ -10,7 +10,11 @@ models.Base = models.Base if hasattr(models, 'Base') else None
 
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title='Blog')
+app = FastAPI(
+    title='Blog',
+    description='API для работы с публикациями',
+    version='1.0.0',
+)
 
 
 def get_db():
