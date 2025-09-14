@@ -1,0 +1,14 @@
+from sqlalchemy.orm import Session
+from . import models, schemas
+
+
+def get_posts(db: Session):
+    return db.query(models.Post).order_by(models.Post.id).all()
+
+
+def create_post(db: Session, post_in: schemas.PostCreate):
+    post = models.Post(title=post_in.title, content=post_in.content)
+    db.add(post)
+    db.commit()
+    db.refresh(post)
+    return post
