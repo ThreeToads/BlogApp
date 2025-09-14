@@ -1,3 +1,4 @@
+"""ORM-модели SQLAlchemy для приложения блога."""
 from sqlalchemy import Column, Integer, String, Text
 from .database import Base
 
